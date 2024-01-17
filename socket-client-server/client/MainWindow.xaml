@@ -18,8 +18,31 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="GET Request" Grid.Column="1" Height="40" VerticalAlignment="Top" Click="Button_Click" Margin="10,0,10,0" Grid.Row="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,5,0"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Foreground" Value="white"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="DarkBlue"/>
+                    <Setter Property="FontFamily" Value="Arial"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </Button.Style>
         </Button>
         <TextBox Name="ResponseTextBox" Grid.Column="2" Grid.Row="1" Text="" TextWrapping="Wrap" Margin="5,0,15,0" Background="AliceBlue">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="FontFamily" Value="Segoe UI"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Padding" Value="10"/>
+                </Style>
+            </TextBox.Style>
         </TextBox>
     </Grid>
 </Window>
