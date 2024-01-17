@@ -17,5 +17,9 @@
             <RowDefinition Height="auto" MinHeight="350"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Button Content="GET Request" Grid.Column="1" Height="40" VerticalAlignment="Top" Click="Button_Click" Margin="10,0,10,0" Grid.Row="1">
+        </Button>
+        <TextBox Name="ResponseTextBox" Grid.Column="2" Grid.Row="1" Text="" TextWrapping="Wrap" Margin="5,0,15,0" Background="AliceBlue">
+        </TextBox>
     </Grid>
 </Window>
