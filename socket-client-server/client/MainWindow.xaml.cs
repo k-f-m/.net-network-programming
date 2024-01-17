@@ -32,16 +32,15 @@ public partial class MainWindow : Window
     /// <param name="e">The event data.</param>
     private async void Button_Click(object sender, RoutedEventArgs e)
     {
+        // Set the IP address and port number for the endpoint.
+        IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+        IPEndPoint ipEndPoint = new(ipAddress, 5142);
+
         // Create a new socket object by specifying the addressing scheme, socket type, and protocol that an instance of the Socket class represents.
         using Socket client = new Socket(
             AddressFamily.InterNetwork,
             SocketType.Stream,
             ProtocolType.Tcp);
-
-        // Set the IP address and port number.
-        IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-        IPEndPoint ipEndPoint = new(ipAddress, 5142);
-
         try
         {
             // Connect to the specified endpoint.
@@ -63,7 +62,7 @@ public partial class MainWindow : Window
             int bytesReceived = await client.ReceiveAsync(responseBytes, SocketFlags.None);
             string response = Encoding.UTF8.GetString(responseBytes, 0, bytesReceived);
 
-            // Print the response to the IDE's debug window and display it inside the text block.
+            // Print the response to the IDE's debug window and display it inside the text box.
             Debug.WriteLine($"Response: {response}");
             ResponseTextBox.Text = response;
 
@@ -74,7 +73,7 @@ public partial class MainWindow : Window
 
         catch (Exception ex)
         {
-            // Print the exception to the IDE's debug window and display its message inside the text block.
+            // Print the exception to the IDE's debug window and display its message inside the text box.
             Debug.WriteLine($"{ex}");
             ResponseTextBox.Text = ex.Message;
         }
